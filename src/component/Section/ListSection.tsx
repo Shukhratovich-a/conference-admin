@@ -8,13 +8,15 @@ import {
   DateField,
 } from "react-admin";
 
-export const ListTopic = ({ ...props }) => {
+export const ListSection = ({ ...props }) => {
   return (
     <List {...props}>
       <Datagrid>
         <TextField source="id" label="Id" />
 
-        <TextField source="title" label="Title" />
+        <TextField source="titleEn" label="Title" />
+        <TextField source="titleRu" label="Title" />
+        <TextField source="titleUz" label="Title" />
 
         <DateField source="createAt" label="Publication date" />
 

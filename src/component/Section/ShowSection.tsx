@@ -11,7 +11,7 @@ import {
   ListButton,
 } from "react-admin";
 
-export const ShowTopic = ({ ...props }) => {
+export const ShowSection = ({ ...props }) => {
   return (
     <Show
       actions={
@@ -28,7 +28,9 @@ export const ShowTopic = ({ ...props }) => {
       <SimpleShowLayout>
         <TextField source="id" label="Id" />
 
-        <TextField source="title" label="Title" />
+        <TextField source="titleEn" label="Title" />
+        <TextField source="titleRu" label="Title" />
+        <TextField source="titleUz" label="Title" />
 
         <DateField source="createAt" label="Publication date" />
 
