@@ -13,9 +13,9 @@ export const ListHomepage = ({ ...props }) => {
       <Datagrid>
         <TextField source="id" label="Id" />
 
-        <TextField source="titleEn" label="Title" />
-        <TextField source="titleRu" label="Title" />
-        <TextField source="titleUz" label="Title" />
+        <TextField source="mainTextEn" label="Main text" />
+        <TextField source="mainTextRu" label="Main text" />
+        <TextField source="mainTextUz" label="Main text" />
 
         <DateField source="createAt" label="Publication date" />
 
