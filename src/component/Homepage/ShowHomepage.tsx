@@ -1,6 +1,5 @@
 import {
   DateField,
-  DeleteButton,
   EditButton,
   PrevNextButtons,
   Show,
@@ -20,7 +19,6 @@ export const ShowHomepage = ({ ...props }) => {
           <ListButton />
           <CreateButton />
           <EditButton />
-          <DeleteButton />
         </TopToolbar>
       }
       {...props}

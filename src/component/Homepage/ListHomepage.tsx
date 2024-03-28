@@ -1,6 +1,5 @@
 import {
   Datagrid,
-  DeleteButton,
   EditButton,
   List,
   ShowButton,
@@ -24,7 +23,6 @@ export const ListHomepage = ({ ...props }) => {
 
         <ShowButton />
         <EditButton />
-        <DeleteButton />
       </Datagrid>
     </List>
   );
