@@ -9,10 +9,10 @@ import querystring from "query-string";
 
 import axios from "./axios";
 
-export const topic = {
+export const section = {
   getList: async ({ pagination: { perPage: limit, page } }: GetListParams) => {
     const url = querystring.stringifyUrl({
-      url: "/topic/get-with-count",
+      url: "/section/get-with-count",
       query: { limit, page },
     });
 
@@ -24,19 +24,19 @@ export const topic = {
   },
 
   getOne: async ({ id }: GetOneParams) => {
-    const { data } = await axios.get(`/topic/get-by-id/${id}`);
+    const { data } = await axios.get(`/section/get-with-contents/${id}`);
 
     return { data };
   },
 
   create: async ({ data: body }: CreateParams) => {
-    const { data } = await axios.post(`/topic/create`, { ...body });
+    const { data } = await axios.post(`/section/create`, { ...body });
 
     return { data };
   },
 
   update: async ({ data: body, id }: UpdateParams) => {
-    const { data } = await axios.put(`/topic/update/${id}`, { ...body });
+    const { data } = await axios.put(`/section/update/${id}`, { ...body });
 
     return { data };
   },
