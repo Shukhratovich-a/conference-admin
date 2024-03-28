@@ -17,7 +17,8 @@ import simpleRestDataProvider from "ra-data-simple-rest";
 
 import axios, { DOMAIN } from "@/api/axios";
 
-import { topic } from "@/api/topic.api";
+import { section } from "@/api/section.api";
+import { homepage } from "@/api/homepage.api";
 
 export const baseDataProvider = simpleRestDataProvider(DOMAIN);
 
@@ -28,8 +29,10 @@ export const dataProvider: DataProvider = {
     params: GetListParams
   ): Promise<GetListResult> => {
     switch (resource) {
-      case "topic":
-        return topic.getList(params);
+      case "section":
+        return section.getList(params);
+      case "homepage":
+        return homepage.getList();
       default: {
         const {
           data: { data, total },
@@ -68,8 +71,10 @@ export const dataProvider: DataProvider = {
     params: GetOneParams
   ): Promise<GetOneResult> => {
     switch (resource) {
-      case "topic":
-        return topic.getOne(params);
+      case "section":
+        return section.getOne(params);
+      case "homepage":
+        return homepage.getOne();
       default: {
         const { data } = await axios.get(`/${resource}/get-by-id/${params.id}`);
 
@@ -83,8 +88,8 @@ export const dataProvider: DataProvider = {
     params: CreateParams
   ): Promise<CreateResult> => {
     switch (resource) {
-      case "topic":
-        return topic.create(params);
+      case "section":
+        return section.create(params);
       default: {
         const { data } = await axios.post(`/${resource}/create`, {
           ...params.data,
@@ -97,8 +102,10 @@ export const dataProvider: DataProvider = {
 
   update: async (resource: string, params: UpdateParams) => {
     switch (resource) {
-      case "topic":
-        return topic.update(params);
+      case "section":
+        return section.update(params);
+      case "homepage":
+        return homepage.update(params);
       default: {
         const { data } = await axios.post(`/${resource}/update/${params.id}`, {
           ...params.data,
