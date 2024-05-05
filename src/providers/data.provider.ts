@@ -17,26 +17,32 @@ import simpleRestDataProvider from "ra-data-simple-rest";
 
 import axios, { DOMAIN } from "@/api/axios";
 
-import { section } from "@/api/section.api";
+import { header } from "@/api/header.api";
 import { homepage } from "@/api/homepage.api";
+import { user } from "@/api/user.api";
+import { section } from "@/api/section.api";
+import { article } from "@/api/article.api";
 
 export const baseDataProvider = simpleRestDataProvider(DOMAIN);
 
 export const dataProvider: DataProvider = {
   ...baseDataProvider,
-  getList: async (
-    resource: string,
-    params: GetListParams
-  ): Promise<GetListResult> => {
+  getList: async (resource: string, params: GetListParams): Promise<GetListResult> => {
     switch (resource) {
-      case "section":
-        return section.getList(params);
+      case "header":
+        return header.getList();
       case "homepage":
         return homepage.getList();
+      case "user":
+        return user.getList(params);
+      case "section":
+        return section.getList(params);
+      case "article":
+        return article.getList(params);
       default: {
         const {
           data: { data, total },
-        } = await axios.get(`/${resource}/get-all`);
+        } = await axios.get(`/${resource}/get-with-count`);
 
         return { data, total };
       }
@@ -47,9 +53,7 @@ export const dataProvider: DataProvider = {
     const data: number[] = [];
 
     for (const id of ids) {
-      const { data: currentData } = await axios.get(
-        `/${resource}/get-by-id/${id}`
-      );
+      const { data: currentData } = await axios.get(`/${resource}/get-with-contents/${id}`);
       data.push(currentData);
     }
 
@@ -66,15 +70,18 @@ export const dataProvider: DataProvider = {
     return { data, total };
   },
 
-  getOne: async (
-    resource: string,
-    params: GetOneParams
-  ): Promise<GetOneResult> => {
+  getOne: async (resource: string, params: GetOneParams): Promise<GetOneResult> => {
     switch (resource) {
-      case "section":
-        return section.getOne(params);
+      case "header":
+        return header.getOne();
       case "homepage":
         return homepage.getOne();
+      case "user":
+        return user.getOne(params);
+      case "section":
+        return section.getOne(params);
+      case "article":
+        return article.getOne(params);
       default: {
         const { data } = await axios.get(`/${resource}/get-by-id/${params.id}`);
 
@@ -83,17 +90,16 @@ export const dataProvider: DataProvider = {
     }
   },
 
-  create: async (
-    resource: string,
-    params: CreateParams
-  ): Promise<CreateResult> => {
+  create: async (resource: string, params: CreateParams): Promise<CreateResult> => {
     switch (resource) {
+      case "user":
+        return user.create(params);
       case "section":
         return section.create(params);
+      case "article":
+        return article.create(params);
       default: {
-        const { data } = await axios.post(`/${resource}/create`, {
-          ...params.data,
-        });
+        const { data } = await axios.post(`/${resource}/create`, { ...params.data });
 
         return data;
       }
@@ -102,10 +108,16 @@ export const dataProvider: DataProvider = {
 
   update: async (resource: string, params: UpdateParams) => {
     switch (resource) {
-      case "section":
-        return section.update(params);
+      case "header":
+        return header.update(params);
       case "homepage":
         return homepage.update(params);
+      case "user":
+        return user.update(params);
+      case "section":
+        return section.update(params);
+      case "article":
+        return article.update(params);
       default: {
         const { data } = await axios.post(`/${resource}/update/${params.id}`, {
           ...params.data,
@@ -122,10 +134,7 @@ export const dataProvider: DataProvider = {
     return { data };
   },
 
-  deleteMany: async (
-    resource: string,
-    { ids }: DeleteManyParams
-  ): Promise<DeleteManyResult> => {
+  deleteMany: async (resource: string, { ids }: DeleteManyParams): Promise<DeleteManyResult> => {
     const data: number[] = [];
 
     for (const id of ids) {
