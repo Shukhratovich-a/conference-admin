@@ -19,6 +19,9 @@ import axios, { DOMAIN } from "@/api/axios";
 
 import { header } from "@/api/header.api";
 import { homepage } from "@/api/homepage.api";
+import { date } from "@/api/date.api";
+import { fee } from "@/api/fee.api";
+import { submission } from "@/api/submission.api";
 import { user } from "@/api/user.api";
 import { section } from "@/api/section.api";
 import { article } from "@/api/article.api";
@@ -33,6 +36,12 @@ export const dataProvider: DataProvider = {
         return header.getList();
       case "homepage":
         return homepage.getList();
+      case "date":
+        return date.getList();
+      case "fee":
+        return fee.getList();
+      case "submission":
+        return submission.getList();
       case "user":
         return user.getList(params);
       case "section":
@@ -76,6 +85,12 @@ export const dataProvider: DataProvider = {
         return header.getOne();
       case "homepage":
         return homepage.getOne();
+      case "date":
+        return date.getOne();
+      case "fee":
+        return fee.getOne();
+      case "submission":
+        return submission.getOne();
       case "user":
         return user.getOne(params);
       case "section":
@@ -112,6 +127,12 @@ export const dataProvider: DataProvider = {
         return header.update(params);
       case "homepage":
         return homepage.update(params);
+      case "date":
+        return date.update(params);
+      case "fee":
+        return fee.update(params);
+      case "submission":
+        return submission.update(params);
       case "user":
         return user.update(params);
       case "section":
