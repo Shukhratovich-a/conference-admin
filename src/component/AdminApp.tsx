@@ -20,6 +20,22 @@ import { ListSubmission } from "./Submission/ListSubmission";
 import { EditSubmission } from "./Submission/EditSubmission";
 import { ShowSubmission } from "./Submission/ShowSubmission";
 
+import { ListContact } from "./Contact/ListContact";
+import { EditContact } from "./Contact/EditContact";
+import { ShowContact } from "./Contact/ShowContact";
+
+import { ListAccommodation } from "./Accommodation/ListAccommodation";
+import { EditAccommodation } from "./Accommodation/EditAccommodation";
+import { ShowAccommodation } from "./Accommodation/ShowAccommodation";
+
+import { ListProgram } from "./Program/ListProgram";
+import { EditProgram } from "./Program/EditProgram";
+import { ShowProgram } from "./Program/ShowProgram";
+
+import { ListSocialProgram } from "./SocialProgram/ListSocialProgram";
+import { EditSocialProgram } from "./SocialProgram/EditSocialProgram";
+import { ShowSocialProgram } from "./SocialProgram/ShowSocialProgram";
+
 import { ListHomepage } from "./Homepage/ListHomepage";
 import { EditHomepage } from "./Homepage/EditHomepage";
 import { ShowHomepage } from "./Homepage/ShowHomepage";
@@ -55,6 +71,14 @@ const AdminApp = () => (
     <Resource name="fee" list={ListFee} edit={EditFee} show={ShowFee} />
 
     <Resource name="submission" list={ListSubmission} edit={EditSubmission} show={ShowSubmission} />
+
+    <Resource name="contact" list={ListContact} edit={EditContact} show={ShowContact} />
+
+    <Resource name="accommodation" list={ListAccommodation} edit={EditAccommodation} show={ShowAccommodation} />
+
+    <Resource name="program" list={ListProgram} edit={EditProgram} show={ShowProgram} />
+
+    <Resource name="social-program" list={ListSocialProgram} edit={EditSocialProgram} show={ShowSocialProgram} />
 
     <Resource name="sponsor" list={ListSponsor} create={CreateSponsor} edit={EditSponsor} show={ShowSponsor} />
 
