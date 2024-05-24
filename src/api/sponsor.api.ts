@@ -21,6 +21,8 @@ export const sponsor = {
   getOne: async ({ id }: GetOneParams) => {
     const { data } = await axios.get(`/sponsor/get-with-contents/${id}`);
 
+    data.image = { src: data.image };
+
     return { data };
   },
 
