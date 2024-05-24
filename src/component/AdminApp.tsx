@@ -24,6 +24,11 @@ import { ListHomepage } from "./Homepage/ListHomepage";
 import { EditHomepage } from "./Homepage/EditHomepage";
 import { ShowHomepage } from "./Homepage/ShowHomepage";
 
+import { ListSponsor } from "./Sponsor/ListSponsor";
+import { CreateSponsor } from "./Sponsor/CreateSponsor";
+import { EditSponsor } from "./Sponsor/EditSponsor";
+import { ShowSponsor } from "./Sponsor/ShowSponsor";
+
 import { ListUser } from "./User/ListUser";
 import { CreateUser } from "./User/CreateUser";
 import { EditUser } from "./User/EditUser";
@@ -50,6 +55,8 @@ const AdminApp = () => (
     <Resource name="fee" list={ListFee} edit={EditFee} show={ShowFee} />
 
     <Resource name="submission" list={ListSubmission} edit={EditSubmission} show={ShowSubmission} />
+
+    <Resource name="sponsor" list={ListSponsor} create={CreateSponsor} edit={EditSponsor} show={ShowSponsor} />
 
     <Resource name="user" list={ListUser} create={CreateUser} edit={EditUser} show={ShowUser} />
 
