@@ -22,6 +22,7 @@ import { homepage } from "@/api/homepage.api";
 import { date } from "@/api/date.api";
 import { fee } from "@/api/fee.api";
 import { submission } from "@/api/submission.api";
+import { sponsor } from "@/api/sponsor.api";
 import { user } from "@/api/user.api";
 import { section } from "@/api/section.api";
 import { article } from "@/api/article.api";
@@ -42,6 +43,8 @@ export const dataProvider: DataProvider = {
         return fee.getList();
       case "submission":
         return submission.getList();
+      case "sponsor":
+        return sponsor.getList(params);
       case "user":
         return user.getList(params);
       case "section":
@@ -91,6 +94,8 @@ export const dataProvider: DataProvider = {
         return fee.getOne();
       case "submission":
         return submission.getOne();
+      case "sponsor":
+        return sponsor.getOne(params);
       case "user":
         return user.getOne(params);
       case "section":
@@ -107,6 +112,8 @@ export const dataProvider: DataProvider = {
 
   create: async (resource: string, params: CreateParams): Promise<CreateResult> => {
     switch (resource) {
+      case "sponsor":
+        return sponsor.create(params);
       case "user":
         return user.create(params);
       case "section":
@@ -135,6 +142,8 @@ export const dataProvider: DataProvider = {
         return submission.update(params);
       case "user":
         return user.update(params);
+      case "sponsor":
+        return sponsor.update(params);
       case "section":
         return section.update(params);
       case "article":
