@@ -41,7 +41,7 @@ export const sponsor = {
     if (body.image && body.image.rawFile) {
       const { data: imageData } = await fileUpload(body.image.rawFile);
       body.image = imageData.url;
-    } else body.image = null;
+    } else delete body.image;
 
     const { data } = await axios.put(`/sponsor/update/${id}`, { ...body });
 
