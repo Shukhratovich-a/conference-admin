@@ -22,6 +22,10 @@ import { homepage } from "@/api/homepage.api";
 import { date } from "@/api/date.api";
 import { fee } from "@/api/fee.api";
 import { submission } from "@/api/submission.api";
+import { contact } from "@/api/contact.api";
+import { accommodation } from "@/api/accommodation.api";
+import { program } from "@/api/program.api";
+import { socialProgram } from "@/api/social-program.api";
 import { sponsor } from "@/api/sponsor.api";
 import { user } from "@/api/user.api";
 import { section } from "@/api/section.api";
@@ -43,6 +47,14 @@ export const dataProvider: DataProvider = {
         return fee.getList();
       case "submission":
         return submission.getList();
+      case "contact":
+        return contact.getList();
+      case "accommodation":
+        return accommodation.getList();
+      case "program":
+        return program.getList();
+      case "social-program":
+        return socialProgram.getList();
       case "sponsor":
         return sponsor.getList(params);
       case "user":
@@ -94,6 +106,14 @@ export const dataProvider: DataProvider = {
         return fee.getOne();
       case "submission":
         return submission.getOne();
+      case "contact":
+        return contact.getOne();
+      case "accommodation":
+        return accommodation.getOne();
+      case "program":
+        return program.getOne();
+      case "social-program":
+        return socialProgram.getOne();
       case "sponsor":
         return sponsor.getOne(params);
       case "user":
@@ -140,6 +160,14 @@ export const dataProvider: DataProvider = {
         return fee.update(params);
       case "submission":
         return submission.update(params);
+      case "contact":
+        return contact.update(params);
+      case "accommodation":
+        return accommodation.update(params);
+      case "program":
+        return program.update(params);
+      case "social-program":
+        return socialProgram.update(params);
       case "user":
         return user.update(params);
       case "sponsor":
