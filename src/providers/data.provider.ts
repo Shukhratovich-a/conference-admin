@@ -27,7 +27,10 @@ import { accommodation } from "@/api/accommodation.api";
 import { program } from "@/api/program.api";
 import { socialProgram } from "@/api/social-program.api";
 import { sponsor } from "@/api/sponsor.api";
+import { speaker } from "@/api/speaker.api";
 import { user } from "@/api/user.api";
+import { organizerRole } from "@/api/organizer-role.api";
+import { committeeRole } from "@/api/committee-role.api";
 import { section } from "@/api/section.api";
 import { article } from "@/api/article.api";
 
@@ -57,8 +60,14 @@ export const dataProvider: DataProvider = {
         return socialProgram.getList();
       case "sponsor":
         return sponsor.getList(params);
+      case "speaker":
+        return speaker.getList(params);
       case "user":
         return user.getList(params);
+      case "organizer-role":
+        return organizerRole.getList(params);
+      case "committee-role":
+        return committeeRole.getList(params);
       case "section":
         return section.getList(params);
       case "article":
@@ -116,8 +125,14 @@ export const dataProvider: DataProvider = {
         return socialProgram.getOne();
       case "sponsor":
         return sponsor.getOne(params);
+      case "speaker":
+        return speaker.getOne(params);
       case "user":
         return user.getOne(params);
+      case "organizer-role":
+        return organizerRole.getOne(params);
+      case "committee-role":
+        return committeeRole.getOne(params);
       case "section":
         return section.getOne(params);
       case "article":
@@ -134,10 +149,16 @@ export const dataProvider: DataProvider = {
     switch (resource) {
       case "sponsor":
         return sponsor.create(params);
+      case "speaker":
+        return speaker.create(params);
       case "user":
         return user.create(params);
       case "section":
         return section.create(params);
+      case "organizer-role":
+        return organizerRole.create(params);
+      case "committee-role":
+        return committeeRole.create(params);
       case "article":
         return article.create(params);
       default: {
@@ -168,10 +189,16 @@ export const dataProvider: DataProvider = {
         return program.update(params);
       case "social-program":
         return socialProgram.update(params);
+      case "speaker":
+        return speaker.update(params);
       case "user":
         return user.update(params);
       case "sponsor":
         return sponsor.update(params);
+      case "organizer-role":
+        return organizerRole.update(params);
+      case "committee-role":
+        return committeeRole.update(params);
       case "section":
         return section.update(params);
       case "article":
