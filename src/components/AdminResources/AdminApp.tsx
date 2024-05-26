@@ -45,10 +45,25 @@ import { CreateSponsor } from "./Sponsor/CreateSponsor";
 import { EditSponsor } from "./Sponsor/EditSponsor";
 import { ShowSponsor } from "./Sponsor/ShowSponsor";
 
+import { ListSpeaker } from "./Speaker/ListSpeaker";
+import { CreateSpeaker } from "./Speaker/CreateSpeaker";
+import { EditSpeaker } from "./Speaker/EditSpeaker";
+import { ShowSpeaker } from "./Speaker/ShowSpeaker";
+
 import { ListUser } from "./User/ListUser";
 import { CreateUser } from "./User/CreateUser";
 import { EditUser } from "./User/EditUser";
 import { ShowUser } from "./User/ShowUser";
+
+import { ListOrganizerRole } from "./OrganizerRole/ListOrganizerRole";
+import { CreateOrganizerRole } from "./OrganizerRole/CreateOrganizerRole";
+import { EditOrganizerRole } from "./OrganizerRole/EditOrganizerRole";
+import { ShowOrganizerRole } from "./OrganizerRole/ShowOrganizerRole";
+
+import { ListCommitteeRole } from "./CommitteeRole/ListCommitteeRole";
+import { CreateCommitteeRole } from "./CommitteeRole/CreateCommitteeRole";
+import { EditCommitteeRole } from "./CommitteeRole/EditCommitteeRole";
+import { ShowCommitteeRole } from "./CommitteeRole/ShowCommitteeRole";
 
 import { ListSection } from "./Section/ListSection";
 import { CreateSection } from "./Section/CreateSection";
@@ -82,7 +97,25 @@ const AdminApp = () => (
 
     <Resource name="sponsor" list={ListSponsor} create={CreateSponsor} edit={EditSponsor} show={ShowSponsor} />
 
+    <Resource name="speaker" list={ListSpeaker} create={CreateSpeaker} edit={EditSpeaker} show={ShowSpeaker} />
+
     <Resource name="user" list={ListUser} create={CreateUser} edit={EditUser} show={ShowUser} />
+
+    <Resource
+      name="organizer-role"
+      list={ListOrganizerRole}
+      create={CreateOrganizerRole}
+      edit={EditOrganizerRole}
+      show={ShowOrganizerRole}
+    />
+
+    <Resource
+      name="committee-role"
+      list={ListCommitteeRole}
+      create={CreateCommitteeRole}
+      edit={EditCommitteeRole}
+      show={ShowCommitteeRole}
+    />
 
     <Resource name="section" list={ListSection} create={CreateSection} edit={EditSection} show={ShowSection} />
 
