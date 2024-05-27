@@ -30,7 +30,9 @@ import { sponsor } from "@/api/sponsor.api";
 import { speaker } from "@/api/speaker.api";
 import { user } from "@/api/user.api";
 import { organizerRole } from "@/api/organizer-role.api";
+import { organizer } from "@/api/organizer.api";
 import { committeeRole } from "@/api/committee-role.api";
+import { committee } from "@/api/committee.api";
 import { section } from "@/api/section.api";
 import { article } from "@/api/article.api";
 
@@ -66,8 +68,12 @@ export const dataProvider: DataProvider = {
         return user.getList(params);
       case "organizer-role":
         return organizerRole.getList(params);
+      case "organizer":
+        return organizer.getList(params);
       case "committee-role":
         return committeeRole.getList(params);
+      case "committee":
+        return committee.getList(params);
       case "section":
         return section.getList(params);
       case "article":
@@ -131,8 +137,12 @@ export const dataProvider: DataProvider = {
         return user.getOne(params);
       case "organizer-role":
         return organizerRole.getOne(params);
+      case "organizer":
+        return organizer.getOne(params);
       case "committee-role":
         return committeeRole.getOne(params);
+      case "committee":
+        return committee.getOne(params);
       case "section":
         return section.getOne(params);
       case "article":
@@ -157,8 +167,12 @@ export const dataProvider: DataProvider = {
         return section.create(params);
       case "organizer-role":
         return organizerRole.create(params);
+      case "organizer":
+        return organizer.create(params);
       case "committee-role":
         return committeeRole.create(params);
+      case "committee":
+        return committee.create(params);
       case "article":
         return article.create(params);
       default: {
@@ -197,8 +211,12 @@ export const dataProvider: DataProvider = {
         return sponsor.update(params);
       case "organizer-role":
         return organizerRole.update(params);
+      case "organizer":
+        return organizer.update(params);
       case "committee-role":
         return committeeRole.update(params);
+      case "committee":
+        return committee.update(params);
       case "section":
         return section.update(params);
       case "article":
