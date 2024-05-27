@@ -60,10 +60,20 @@ import { CreateOrganizerRole } from "./OrganizerRole/CreateOrganizerRole";
 import { EditOrganizerRole } from "./OrganizerRole/EditOrganizerRole";
 import { ShowOrganizerRole } from "./OrganizerRole/ShowOrganizerRole";
 
+import { ListOrganizer } from "./Organizer/ListOrganizer";
+import { CreateOrganizer } from "./Organizer/CreateOrganizer";
+import { EditOrganizer } from "./Organizer/EditOrganizer";
+import { ShowOrganizer } from "./Organizer/ShowOrganizer";
+
 import { ListCommitteeRole } from "./CommitteeRole/ListCommitteeRole";
 import { CreateCommitteeRole } from "./CommitteeRole/CreateCommitteeRole";
 import { EditCommitteeRole } from "./CommitteeRole/EditCommitteeRole";
 import { ShowCommitteeRole } from "./CommitteeRole/ShowCommitteeRole";
+
+import { ListCommittee } from "./Committee/ListCommittee";
+import { CreateCommittee } from "./Committee/CreateCommittee";
+import { EditCommittee } from "./Committee/EditCommittee";
+import { ShowCommittee } from "./Committee/ShowCommittee";
 
 import { ListSection } from "./Section/ListSection";
 import { CreateSection } from "./Section/CreateSection";
@@ -110,11 +120,27 @@ const AdminApp = () => (
     />
 
     <Resource
+      name="organizer"
+      list={ListOrganizer}
+      create={CreateOrganizer}
+      edit={EditOrganizer}
+      show={ShowOrganizer}
+    />
+
+    <Resource
       name="committee-role"
       list={ListCommitteeRole}
       create={CreateCommitteeRole}
       edit={EditCommitteeRole}
       show={ShowCommitteeRole}
+    />
+
+    <Resource
+      name="committee"
+      list={ListCommittee}
+      create={CreateCommittee}
+      edit={EditCommittee}
+      show={ShowCommittee}
     />
 
     <Resource name="section" list={ListSection} create={CreateSection} edit={EditSection} show={ShowSection} />
