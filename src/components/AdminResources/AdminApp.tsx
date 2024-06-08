@@ -85,6 +85,9 @@ import { CreateArticle } from "./Article/CreateArticle";
 import { EditArticle } from "./Article/EditArticle";
 import { ShowArticle } from "./Article/ShowArticle";
 
+import { ListFile } from "./File/ListFile";
+import { CreateFile } from "./File/CreateFile";
+
 const AdminApp = () => (
   <Admin dataProvider={dataProvider} authProvider={authProvider} i18nProvider={i18nProvider} requireAuth>
     <Resource name="header" list={ListHeader} edit={EditHeader} show={ShowHeader} />
@@ -146,6 +149,8 @@ const AdminApp = () => (
     <Resource name="section" list={ListSection} create={CreateSection} edit={EditSection} show={ShowSection} />
 
     <Resource name="article" list={ListArticle} create={CreateArticle} edit={EditArticle} show={ShowArticle} />
+
+    <Resource name="file" list={ListFile} create={CreateFile} />
   </Admin>
 );
 

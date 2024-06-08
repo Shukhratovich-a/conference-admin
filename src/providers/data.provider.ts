@@ -35,6 +35,7 @@ import { committeeRole } from "@/api/committee-role.api";
 import { committee } from "@/api/committee.api";
 import { section } from "@/api/section.api";
 import { article } from "@/api/article.api";
+import { file } from "@/api/file.api";
 
 export const baseDataProvider = simpleRestDataProvider(DOMAIN);
 
@@ -78,6 +79,8 @@ export const dataProvider: DataProvider = {
         return section.getList(params);
       case "article":
         return article.getList(params);
+      case "file":
+        return file.getList(params);
       default: {
         const {
           data: { data, total },
@@ -175,6 +178,8 @@ export const dataProvider: DataProvider = {
         return committee.create(params);
       case "article":
         return article.create(params);
+      case "file":
+        return file.create(params);
       default: {
         const { data } = await axios.post(`/${resource}/create`, { ...params.data });
 
