@@ -20,6 +20,10 @@ import { ListSubmission } from "./Submission/ListSubmission";
 import { EditSubmission } from "./Submission/EditSubmission";
 import { ShowSubmission } from "./Submission/ShowSubmission";
 
+import { ListVenue } from "./Venue/ListVenue";
+import { EditVenue } from "./Venue/EditVenue";
+import { ShowVenue } from "./Venue/ShowVenue";
+
 import { ListContact } from "./Contact/ListContact";
 import { EditContact } from "./Contact/EditContact";
 import { ShowContact } from "./Contact/ShowContact";
@@ -99,6 +103,8 @@ const AdminApp = () => (
     <Resource name="fee" list={ListFee} edit={EditFee} show={ShowFee} />
 
     <Resource name="submission" list={ListSubmission} edit={EditSubmission} show={ShowSubmission} />
+
+    <Resource name="venue" list={ListVenue} edit={EditVenue} show={ShowVenue} />
 
     <Resource name="contact" list={ListContact} edit={EditContact} show={ShowContact} />
 
