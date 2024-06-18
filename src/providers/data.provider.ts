@@ -22,6 +22,7 @@ import { homepage } from "@/api/homepage.api";
 import { date } from "@/api/date.api";
 import { fee } from "@/api/fee.api";
 import { submission } from "@/api/submission.api";
+import { venue } from "@/api/venue.api";
 import { contact } from "@/api/contact.api";
 import { accommodation } from "@/api/accommodation.api";
 import { program } from "@/api/program.api";
@@ -53,6 +54,8 @@ export const dataProvider: DataProvider = {
         return fee.getList();
       case "submission":
         return submission.getList();
+      case "venue":
+        return venue.getList();
       case "contact":
         return contact.getList();
       case "accommodation":
@@ -124,6 +127,8 @@ export const dataProvider: DataProvider = {
         return fee.getOne();
       case "submission":
         return submission.getOne();
+      case "venue":
+        return venue.getOne();
       case "contact":
         return contact.getOne();
       case "accommodation":
@@ -200,6 +205,8 @@ export const dataProvider: DataProvider = {
         return fee.update(params);
       case "submission":
         return submission.update(params);
+      case "venue":
+        return venue.update(params);
       case "contact":
         return contact.update(params);
       case "accommodation":
