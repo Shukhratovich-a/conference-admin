@@ -12,7 +12,7 @@ export const EditContact = ({ ...props }) => {
         }
       >
         <TabbedForm.Tab label="Uzbek">
-          <RichTextInput source="bodyEn" label="Main text" validate={required()} fullWidth />
+          <RichTextInput source="bodyUz" label="Main text" validate={required()} fullWidth />
         </TabbedForm.Tab>
 
         <TabbedForm.Tab label="English">
