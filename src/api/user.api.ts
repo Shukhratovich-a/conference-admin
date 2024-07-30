@@ -33,7 +33,7 @@ export const user = {
       body.image = imageData.url;
     } else body.image = null;
 
-    const { data } = await axios.post(`/user/register`, { ...body });
+    const { data } = await axios.post(`/user/register`, { ...body, trip: body.trip === "true" });
 
     return { data };
   },
@@ -44,7 +44,7 @@ export const user = {
       body.image = imageData.url;
     } else body.image = null;
 
-    const { data } = await axios.put(`/user/update/${id}`, { ...body });
+    const { data } = await axios.put(`/user/update/${id}`, { ...body, trip: body.trip === "true" });
 
     return { data };
   },

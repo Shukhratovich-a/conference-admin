@@ -1,4 +1,13 @@
-import { SimpleForm, Edit, TextInput, SelectInput, required, ImageInput, ImageField } from "react-admin";
+import {
+  SimpleForm,
+  Edit,
+  TextInput,
+  SelectInput,
+  required,
+  ImageInput,
+  ImageField,
+  RadioButtonGroupInput,
+} from "react-admin";
 import { RichTextInput } from "ra-input-rich-text";
 
 export const EditUser = ({ ...props }) => {
@@ -33,6 +42,14 @@ export const EditUser = ({ ...props }) => {
         <TextInput source="institute" fullWidth validate={required()} />
         <TextInput source="specialty" fullWidth validate={required()} />
         <TextInput source="postalCode" fullWidth validate={required()} />
+
+        <RadioButtonGroupInput
+          source="trip"
+          choices={[
+            { id: "true", name: "Yes" },
+            { id: "false", name: "No" },
+          ]}
+        />
 
         <TextInput source="phone" fullWidth validate={required()} />
         <TextInput source="email" fullWidth validate={required()} />

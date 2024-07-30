@@ -10,9 +10,9 @@ export const ListUser = ({ ...props }) => {
 
         <TextField source="lastName" label="Last name" sortable={false} />
 
-        <TextField source="role" label="Role" />
-
         <TextField source="country" label="Country" />
+
+        <TextField source="trip" label="Trip" />
 
         <DateField source="createAt" label="Publication date" />
 
