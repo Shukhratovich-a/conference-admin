@@ -24,7 +24,7 @@ export const EditCommittee = ({ ...props }) => {
           <TextInput source="roleEn" fullWidth />
         </TabbedForm.Tab>
 
-        <TabbedForm.Tab label="Russian">
+        <TabbedForm.Tab label="Arabic">
           <TextInput source="nameRu" fullWidth validate={required()} />
           <TextInput source="specialtyRu" fullWidth validate={required()} />
           <TextInput source="countryRu" fullWidth validate={required()} />

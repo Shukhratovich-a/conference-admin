@@ -19,7 +19,7 @@ export const EditAccommodation = ({ ...props }) => {
           <RichTextInput source="bodyEn" label="Main text" validate={required()} fullWidth />
         </TabbedForm.Tab>
 
-        <TabbedForm.Tab label="Russian">
+        <TabbedForm.Tab label="Arabic">
           <RichTextInput source="bodyRu" label="Main text" validate={required()} fullWidth />
         </TabbedForm.Tab>
       </TabbedForm>

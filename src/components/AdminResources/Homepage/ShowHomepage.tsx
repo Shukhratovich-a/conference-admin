@@ -56,7 +56,7 @@ export const ShowHomepage = ({ ...props }) => {
           <RichTextField source="mainTextEn" label="Main text" />
         </TabbedShowLayout.Tab>
 
-        <TabbedShowLayout.Tab label="Russian">
+        <TabbedShowLayout.Tab label="Arabic">
           <TextField source="titleRu" label="Title" />
 
           <RichTextField source="mainTextRu" label="Main text" />

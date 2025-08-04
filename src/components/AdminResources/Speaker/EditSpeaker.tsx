@@ -30,7 +30,7 @@ export const EditSpeaker = ({ ...props }) => {
           <TextInput source="degreeUz" fullWidth validate={required()} />
         </TabbedForm.Tab>
 
-        <TabbedForm.Tab label="Russian">
+        <TabbedForm.Tab label="Arabic">
           <TextInput source="descriptionRu" fullWidth />
           <TextInput source="specialtyRu" fullWidth validate={required()} />
           <TextInput source="degreeRu" fullWidth validate={required()} />

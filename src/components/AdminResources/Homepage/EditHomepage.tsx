@@ -40,7 +40,7 @@ export const EditHomepage = ({ ...props }) => {
           <RichTextInput source="mainTextEn" label="Main text" validate={required()} fullWidth />
         </TabbedForm.Tab>
 
-        <TabbedForm.Tab label="Russian">
+        <TabbedForm.Tab label="Arabic">
           <TextInput source="titleRu" label="Title" validate={required()} fullWidth />
 
           <RichTextInput source="mainTextRu" label="Main text" validate={required()} fullWidth />

@@ -20,7 +20,7 @@ export const ShowContact = ({ ...props }) => {
           <RichTextField source="bodyEn" label="Main text" />
         </TabbedShowLayout.Tab>
 
-        <TabbedShowLayout.Tab label="Russian">
+        <TabbedShowLayout.Tab label="Arabic">
           <RichTextField source="bodyRu" label="Main text" />
         </TabbedShowLayout.Tab>
       </TabbedShowLayout>
